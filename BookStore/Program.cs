@@ -11,6 +11,8 @@ builder.Services.AddDbContext<BookStoreContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:BookConnection"]);
 });
 
+builder.Services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

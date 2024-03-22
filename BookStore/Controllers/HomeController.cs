@@ -6,14 +6,18 @@ namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
+        private IBookstoreRepository _repo;
 
-        public HomeController()
+        public HomeController(IBookstoreRepository temp)
         {
+            _repo = temp;
         }
 
         public IActionResult Index()
         {
-            return View();
+           var bookData = _repo.Books;
+
+            return View(bookData);
         }
     }
 }
