@@ -1,0 +1,15 @@
+﻿@model Book
+
+<div class="card h-100">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title <span class="badge bg-primary float-end">Pages: @Model.PageCount</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Author: @Model.Author</h6>
+        <p class="card-text">
+            <strong>Publisher:</strong> @Model.Publisher<br>
+            <strong>ISBN:</strong> @Model.ISBN<br>
+            <strong>Classification:</strong> @Model.Classification<br>
+            <strong>Category:</strong> @Model.Category<br>
+            <strong>Price:</strong> @Model.Price
+        </p>
+    </div>
+</div>
