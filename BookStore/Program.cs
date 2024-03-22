@@ -1,7 +1,15 @@
+using BookStore.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<BookStoreContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:BookConnection"]);
+});
 
 var app = builder.Build();
 
